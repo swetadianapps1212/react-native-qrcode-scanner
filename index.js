@@ -114,7 +114,7 @@ export default class QRCodeScanner extends Component {
           justifyContent: 'center',
           height: Dimensions.get('window').height,
           width: Dimensions.get('window').width,
-          backgroundColor: 'black',
+          backgroundColor: '#222',
         }}
       >
         <Text style={{ color: 'white' }}>Tap to activate camera</Text>
@@ -278,7 +278,7 @@ export default class QRCodeScanner extends Component {
           message: this.props.permissionDialogMessage,
           buttonPositive: this.props.buttonPositive,
         }}
-        style={[styles.camera, this.props.cameraStyle]}
+        style={[styles.camera]}
         onBarCodeRead={this._handleBarCodeRead.bind(this)}
         type={this.props.cameraType}
         flashMode={this.props.flashMode}
@@ -366,7 +366,8 @@ const styles = StyleSheet.create({
     flex: 2,
     justifyContent: 'center',
     alignItems: 'center',
-    width: Dimensions.get('window').width,
+    width: 200,
+    borderRadius:20
   },
 
   camera: {
@@ -374,8 +375,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'transparent',
-    height: Dimensions.get('window').width,
-    width: Dimensions.get('window').width,
+    height: 200,
+    width: 200,
+    borderRadius : 20,
   },
 
   rectangleContainer: {
@@ -383,13 +385,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'transparent',
+    borderRadius : 20,
+
   },
 
   rectangle: {
     height: 250,
     width: 250,
     borderWidth: 2,
-    borderColor: '#00FF00',
+    borderColor: '#222',
     backgroundColor: 'transparent',
+    borderRadius : 20,
+
   },
 });
